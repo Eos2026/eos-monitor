@@ -2,7 +2,7 @@
 // Per modificare contenuti: cambia solo questo file.
 
 const CONFIG = {
-  citta: "L'Aquila",
+  citta: "Camaiore",
   studio: "EOS Odontoiatria Medicina Estetica",
   claim: "Il tuo sorriso, la nostra passione.",
 
@@ -11,8 +11,8 @@ const CONFIG = {
   // Esempio Lovere (BG): latitudine 45.8119, longitudine 10.0698
   meteoAutomatico: true,
   meteoCoordinate: {
-    latitudine: 42.3498,
-    longitudine: 13.3995,
+    latitudine: 43.9427,
+    longitudine: 110.2978,
     timezone: "Europe/Rome"
   },
 
