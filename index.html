@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>EOS Monitor Sala d'Attesa</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="screen">
+    <aside class="sidebar">
+      <div class="logoBox"><img src="assets/logo/logo-eos.png" alt="EOS" /></div>
+      <div class="brandLine"></div>
+      <h1 id="claim">Il tuo <span>sorriso</span>,<br>la nostra <span>passione</span>.</h1>
+      <div id="services" class="services"></div>
+    </aside>
+
+    <section class="hero">
+      <div class="topbar">
+        <div></div>
+        <div class="datetime"><span class="clockIcon">◷</span><span id="time">--:--</span><span class="sep"></span><span id="date">--</span></div>
+      </div>
+      <div class="photoFrame">
+        <img id="slideImage" src="" alt="Foto studio" />
+        <div class="caption"><h2 id="slideTitle"></h2><p id="slideSubtitle"></p></div>
+        <div id="dots" class="dots"></div>
+      </div>
+    </section>
+
+    <section class="infoBar">
+      <div class="weather card">
+        <h3>METEO OGGI</h3>
+        <div class="weatherBody"><div class="weatherIcon">⛅</div><div><div id="temp" class="temp"></div><div id="minmax" class="minmax"></div></div></div>
+        <div class="city">⌖ <span id="city"></span></div><div id="desc" class="desc"></div>
+      </div>
+      <div class="news card"><h3>NOTIZIE DEL GIORNO</h3><div id="newsItems" class="newsItems"></div></div>
+      <div class="communication card"><h3>COMUNICAZIONE</h3><div class="commIcon">▣</div><strong id="commBoxTitle">Prenota online</strong><p id="commBoxText">È attivo il servizio di prenotazione online. Chiedi info al nostro staff!</p></div>
+    </section>
+
+    <section class="ticker"><div id="tickerText" class="tickerText"></div></section>
+  </main>
+  <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

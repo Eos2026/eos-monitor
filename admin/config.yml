@@ -1,0 +1,81 @@
+backend:
+  name: git-gateway
+  branch: main
+
+locale: it
+media_folder: "assets/foto"
+public_folder: "assets/foto"
+
+collections:
+  - name: "impostazioni"
+    label: "EOS Monitor"
+    files:
+      - label: "Contenuti schermata"
+        name: "config"
+        file: "data/config.json"
+        format: "json"
+        fields:
+          - {label: "Città meteo", name: "citta", widget: "string"}
+          - {label: "Nome studio", name: "studio", widget: "string"}
+          - {label: "Frase principale", name: "claim", widget: "string"}
+          - {label: "Meteo automatico", name: "meteoAutomatico", widget: "boolean", default: true}
+          - label: "Coordinate meteo"
+            name: "meteoCoordinate"
+            widget: "object"
+            fields:
+              - {label: "Latitudine", name: "latitudine", widget: "number", value_type: "float"}
+              - {label: "Longitudine", name: "longitudine", widget: "number", value_type: "float"}
+              - {label: "Timezone", name: "timezone", widget: "string", default: "Europe/Rome"}
+          - label: "Meteo manuale di riserva"
+            name: "meteoManuale"
+            widget: "object"
+            fields:
+              - {label: "Temperatura", name: "temperatura", widget: "string"}
+              - {label: "Minima / Massima", name: "minmax", widget: "string"}
+              - {label: "Descrizione", name: "descrizione", widget: "string"}
+          - {label: "Notizie automatiche ANSA", name: "notizieAutomatiche", widget: "boolean", default: true}
+          - {label: "Feed ANSA", name: "ansaFeedUrl", widget: "string"}
+          - {label: "Numero notizie", name: "numeroNotizie", widget: "number", value_type: "int", min: 1, max: 6}
+          - {label: "Aggiorna notizie ogni minuti", name: "aggiornaNotizieMinuti", widget: "number", value_type: "int"}
+          - label: "Foto slideshow"
+            name: "foto"
+            widget: "list"
+            summary: "{{fields.titolo}}"
+            fields:
+              - {label: "Immagine", name: "file", widget: "image"}
+              - {label: "Titolo", name: "titolo", widget: "string"}
+              - {label: "Descrizione", name: "sottotitolo", widget: "string"}
+              - label: "Posizione foto"
+                name: "posizione"
+                widget: "select"
+                options: ["center center", "left center", "right center", "center top", "center bottom"]
+              - label: "Zoom"
+                name: "zoom"
+                widget: "select"
+                options: ["contain", "cover"]
+          - label: "Servizi laterali"
+            name: "servizi"
+            widget: "list"
+            fields:
+              - {label: "Titolo", name: "titolo", widget: "string"}
+              - {label: "Testo", name: "testo", widget: "string"}
+              - {label: "Icona", name: "icona", widget: "string"}
+          - label: "Notizie manuali di riserva"
+            name: "notizie"
+            widget: "list"
+            fields:
+              - {label: "Ora", name: "ora", widget: "string", required: false}
+              - {label: "Titolo", name: "titolo", widget: "string"}
+              - {label: "Testo", name: "testo", widget: "string"}
+          - label: "Comunicazioni scorrevoli"
+            name: "comunicazioni"
+            widget: "list"
+            field: {label: "Testo", name: "testo", widget: "string"}
+          - label: "Riquadro comunicazione"
+            name: "comunicazioneBox"
+            widget: "object"
+            fields:
+              - {label: "Titolo", name: "titolo", widget: "string"}
+              - {label: "Testo", name: "testo", widget: "text"}
+          - {label: "Secondi per ogni foto", name: "durataSlideSecondi", widget: "number", value_type: "int", min: 3, max: 60}
+          - {label: "Velocità barra comunicazioni", name: "durataTickerSecondi", widget: "number", value_type: "int", min: 10, max: 120}

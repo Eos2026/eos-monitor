@@ -1,0 +1,33 @@
+EOS Monitor v2 con pannello di amministrazione
+
+FUNZIONA COSÌ
+1. La schermata pubblica si vede all'indirizzo principale del sito Netlify.
+2. Il pannello si apre aggiungendo /admin all'indirizzo.
+   Esempio: https://eos-monitor.netlify.app/admin
+3. Da lì puoi modificare foto, testi, meteo, comunicazioni e tempi.
+
+ATTENZIONE
+Il pannello admin richiede Netlify + GitHub, perché deve salvare le modifiche online.
+È gratuito, ma va configurato una volta.
+
+PASSI INIZIALI
+1. Crea un account GitHub gratuito.
+2. Crea un account Netlify gratuito.
+3. Carica questa cartella su GitHub.
+4. Su Netlify crea un nuovo sito collegato al repository GitHub.
+5. In Netlify vai su Site configuration > Identity e attiva Identity.
+6. In Identity attiva Git Gateway.
+7. Invita il tuo indirizzo email come utente admin.
+8. Apri /admin e accedi.
+
+DOPO LA CONFIGURAZIONE
+Per modificare il monitor:
+1. Vai su /admin.
+2. Apri “Contenuti schermata”.
+3. Modifica foto/testi/tempi.
+4. Premi Publish.
+5. Dopo 1-2 minuti le TV vedranno le modifiche.
+
+SULLE TV
+Apri l'indirizzo principale del sito Netlify nel browser LG.
+Non aprire /admin sulle TV.
