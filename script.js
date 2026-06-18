@@ -1,12 +1,11 @@
 let current = 0;
-let CONFIG = null;
 const img = document.getElementById('slideImage');
 const title = document.getElementById('slideTitle');
 const subtitle = document.getElementById('slideSubtitle');
 const dots = document.getElementById('dots');
 
 async function init(){
-  CONFIG = await loadConfig();
+  await loadConfig();
   document.getElementById('claim').innerHTML = CONFIG.claim.replace('sorriso','<span>sorriso</span>').replace('passione','<span>passione</span>');
   document.getElementById('city').textContent = CONFIG.citta;
   setWeatherFallback();
@@ -178,15 +177,7 @@ function escapeHtml(str){
 
 
 async function loadConfig(){
-  try {
-    const res = await fetch('data/config.json?cache=' + Date.now(), { cache: 'no-store' });
-    if (!res.ok) throw new Error('config non disponibile');
-    return await res.json();
-  } catch (e) {
-    console.error('Errore caricamento data/config.json', e);
-    document.body.innerHTML = '<div style="font-family:Arial;padding:40px"><h1>Configurazione non trovata</h1><p>Controlla il file data/config.json.</p></div>';
-    throw e;
-  }
+  return CONFIG;
 }
 
 window.addEventListener('load',init);
